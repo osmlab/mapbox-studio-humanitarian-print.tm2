@@ -1,10 +1,7 @@
 mapbox-studio-humanitarian-print.tm2
--------------------------------
+=======
 
-The objective to distribute maps extracted from OpenStreetMap data to aid in Earthquake mapping. The data has been developed by thousands of crowd-sourced volunteers, and in our estimations provides the most up to date maps of Nepal.
-
-Maps available for 11 most affected districts, where a state of emergency has been declared are: Kathmandu, Bhaktapur, Lalitpur, Dhading, Kavre, Nuwakot, Sindhupalchowk, Dolakha, Gorkha, Rasuwa, Ramecchap.
-
+This project is made up of a map style for Mapbox Studio, highlighting certain humanitarian points-of-interest, and a script for updating the underlying vector tiles to keep the map up to date.
 
 Style mapID: **kll.ptthjjor**
 Source mapID: **kll.ewomvx6r**
@@ -12,11 +9,11 @@ Source mapID: **kll.ewomvx6r**
 ![thimi_z13](https://cloud.githubusercontent.com/assets/4587826/7358459/64db91de-ed03-11e4-81c4-365e77348f56.png)
 *z13*
 
-![thimi_z15](https://cloud.githubusercontent.com/assets/4587826/7358458/64db7ff0-ed03-11e4-9173-f8dec2a44d16.png)
-*z15*
+## Studio files
 
-![thimi_z18](https://cloud.githubusercontent.com/assets/4587826/7358460/64ddb3b0-ed03-11e4-99bc-13a2a114cdf7.png)
-*z18*
+This stylesheet can be used in Mapbox Studio, [following these instructions](https://www.mapbox.com/help/github-style/)
+
+Instructions for updating the data can be found in the [README in the data directory](https://github.com/osmlab/mapbox-studio-humanitarian-print.tm2/tree/master/data)
 
 ## Places 
 
@@ -53,4 +50,5 @@ Print sizes: A4 size 8.27 x 11.69" (21.0 x 29.7cm)
 Oversize output: 17.5 x 24"
 
  - [Printing maps in Studio](https://www.mapbox.com/guides/print/)
+
 
