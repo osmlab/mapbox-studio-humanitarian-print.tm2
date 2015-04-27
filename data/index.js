@@ -1,6 +1,6 @@
 var osmium = require('osmium');
 
-var file = new osmium.File('nepal.latest.osm.pbf', 'pbf');
+var file = new osmium.File(process.argv[2], 'pbf');
 var reader = new osmium.Reader(file, {
     node: true,
     way: true
