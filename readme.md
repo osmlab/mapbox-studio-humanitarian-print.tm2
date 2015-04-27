@@ -6,8 +6,10 @@ This project is made up of a map style for Mapbox Studio, highlighting certain h
 Style mapID: **kll.ptthjjor**
 Source mapID: **kll.ewomvx6r**
 
+[Preview map](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#8/28.580/84.034) 
+
 ![thimi_z13](https://cloud.githubusercontent.com/assets/4587826/7358459/64db91de-ed03-11e4-81c4-365e77348f56.png)
-*z13*
+*z13, exported at 300dpi 17.5 x 24"*
 
 ## Studio files
 
