@@ -9,6 +9,4 @@ It will output line-delimited GeoJSON, which can be fed into [tippecanoe](https:
 - then you can use [tippecanoe](https://github.com/mapbox/tippecanoe) to convert that GeoJSON file to vector tiles, `tippecanoe -o out.mbtiles -n nepal output.geojson`
 - upload `out.mbtiles` to your account at https://www.mapbox.com/uploads/?source=data
 
-Once you have vector tiles in your account on Mapbox.com you can style them in Mapbox studio, using the style provided in this repository. [This guide](https://www.mapbox.com/guides/collaborating/) will help you set up this style yourself.
-
-Let us know what else you need.
+Once you have vector tiles in your account on Mapbox.com you can style them in Mapbox studio, using the style provided in this repository. [This guide](https://www.mapbox.com/help/github-style/) will help you set up this style yourself.

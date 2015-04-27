@@ -1,10 +1,7 @@
 mapbox-studio-humanitarian-print.tm2
 -------------------------------
 
-The objective of this site is to distribute maps extracted from OpenStreetMap data to aid in Earthquake mapping. The data has been developed by thousands of crowd-sourced volunteers, and in our estimations provides the most up to date maps of Nepal.
+This project is made up of a map style for Mapbox Studio, highlighting certain humanitarian points-of-interest, and a script for updating the underlying vector tiles to keep the map up to date.
 
-Maps will soon be available for all 11 most affected districts, and updated as frequently as we can. The 11 most affected districts, where a state of emergency has been declared are: Kathmandu, Bhaktapur, Lalitpur, Dhading, Kavre, Nuwakot, Sindhupalchowk, Dolakha, Gorkha, Rasuwa, Ramecchap.
-
-With prayers for efficient recovery, the Kathmandu Living Labs team.
-
-http://kathmandulivinglabs.github.io/quake-maps/
+- this stylesheet can be used in Mapbox Studio, [following these instructions](https://www.mapbox.com/help/github-style/).
+- instructions for updating the data can be found in the README in the data directory.
