@@ -32,6 +32,9 @@ function filter(item) {
     keys.forEach(function(key) {
         var candidate = key + '=' + tags[key];
         if (desired.indexOf(candidate) > -1) {
+            var type = (item.coordinates !== undefined) ? 'node' : 'way';
+            var properties = tags;
+            properties[type + '_id'] = item.id;
             console.log(JSON.stringify({
                 'type': 'Feature',
                 'properties': tags,
