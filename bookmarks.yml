@@ -38,3 +38,27 @@
   tags: 
     - userbookmark
   index: 4
+- place_name: Kathmandu, Bagmati, Nepal
+  zoom: 15
+  center: 
+    - 27.6749
+    - 85.2783
+  tags: 
+    - userbookmark
+  index: 5
+- place_name: Chasukhel, Nepal
+  zoom: 17
+  center: 
+    - 27.67208
+    - 85.42993
+  tags: 
+    - userbookmark
+  index: 6
+- place_name: Dolakha, Nepal
+  zoom: 18
+  center: 
+    - 27.67795
+    - 86.07402
+  tags: 
+    - userbookmark
+  index: 7
