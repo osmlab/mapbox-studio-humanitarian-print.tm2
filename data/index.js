@@ -1,7 +1,6 @@
 var osmium = require('osmium');
 
 var file = new osmium.File('nepal.latest.osm.pbf', 'pbf');
-
 var reader = new osmium.Reader(file, {
     node: true,
     way: true
@@ -10,8 +9,18 @@ var location_handler = new osmium.LocationHandler();
 var handler = new osmium.Handler();
 
 var desired = [
-    'highway=track',
-    'aeroway=terminal'
+    'amenity=fire_station',
+    'emergency=fire_hydrant',
+    'emergency=water_tank',
+    'emergency=suction_point',
+    'emergency=fire_water_pond',
+    'fire_hydrant:type=pillar',
+    'fire_hydrant:type=underground',
+    'fire_hydrant:type=wall',
+    'fire_hydrant:type=unknown',
+    'fire_hydrant:type=pond',
+    'amenity=public_building',
+    'amenity=drinking_water'
 ];
 
 handler.on('node', filter);
