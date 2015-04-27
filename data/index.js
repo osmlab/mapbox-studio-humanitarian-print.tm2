@@ -9,11 +9,10 @@ var reader = new osmium.Reader(file, {
 var location_handler = new osmium.LocationHandler();
 var handler = new osmium.Handler();
 
-var desired = {
-    'highway': 'track',
-    'aeroway': 'terminal'
-};
-var desiredKeys = Object.keys(desired);
+var desired = [
+    'highway=track',
+    'aeroway=terminal'
+];
 
 handler.on('node', filter);
 handler.on('way', filter);
@@ -22,8 +21,8 @@ function filter(item) {
     var tags = item.tags();
     var keys = Object.keys(tags);
     keys.forEach(function(key) {
-        if ((desiredKeys.indexOf(key) > -1) &&
-            (desired[key] == tags[key])) {
+        var candidate = key + '=' + tags[key];
+        if (desired.indexOf(candidate) > -1) {
             console.log(JSON.stringify({
                 'type': 'Feature',
                 'properties': tags,
