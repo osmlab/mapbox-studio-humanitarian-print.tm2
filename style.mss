@@ -106,7 +106,6 @@ Map {
 
 
 
-
 // Landcover
 #landcover {
   polygon-opacity: 0.5; 

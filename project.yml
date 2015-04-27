@@ -1,5 +1,5 @@
 _prefs: 
-  mapid: 
+  mapid: null
   saveCenter: true
 _properties: 
   bridge: 
@@ -11,9 +11,9 @@ bounds:
   - 180
   - 85.0511
 center: 
-  - 85.2182
-  - 27.7796
-  - 9
+  - 86.0322
+  - 27.7473
+  - 17
 description: ''
 format: "png8:m=h"
 interactivity_layer: ''
@@ -46,11 +46,12 @@ layers:
 maxzoom: 22
 minzoom: 0
 name: KLL quake
-source: "mapbox:///mapbox.mapbox-streets-v5,kll.ewomvx6r"
+source: "mapbox:///mapbox.mapbox-streets-v5,mapbox.mapbox-terrain-v2,kll.ewomvx6r"
 styles: 
   - style.mss
   - road.mss
   - labels.mss
   - pois.mss
   - buildings.mss
+  - mapbox_pois.mss
 template: ''

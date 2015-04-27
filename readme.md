@@ -8,8 +8,6 @@ Source mapID: **kll.ewomvx6r**
 
 [Preview map](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#8/28.580/84.034) 
 
-![thimi_z13](https://cloud.githubusercontent.com/assets/4587826/7358459/64db91de-ed03-11e4-81c4-365e77348f56.png)
-*z13, exported at 300dpi 17.5 x 24"*
 
 ## Studio files
 
@@ -21,23 +19,22 @@ Instructions for updating the data can be found in the [README in the data direc
 
 Bookmark target locations usings Places functionality in Studio. Makes print export and data checking easier. Press heart icon to save location or edit directly `bookmarks.yml` in text editor with Studio. Restart Studio when making manual edits.
 
-### Current locations saved:
+### Locations saved:
 
- - [Kalinchok, Kuri Village, Central Region, Nepal](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#17/27.74751/86.03264)
- 2. [Bahrabise, Central Region, Nepal](https://api.tiles.mapbox.com/v4/mslee.7d05b601/page.html?access_token=pk.eyJ1IjoibXNsZWUiLCJhIjoiclpiTWV5SSJ9.P_h8r37vD8jpIH1A6i1VRg#15/27.7856/85.9024)
- 3. [Charikot, Bhimeshwor Municipality, Nepal](https://api.tiles.mapbox.com/v4/mslee.7d05b601/page.html?access_token=pk.eyJ1IjoibXNsZWUiLCJhIjoiclpiTWV5SSJ9.P_h8r37vD8jpIH1A6i1VRg#17/27.66430/86.04855)
- 4. [Laprak, Nepal](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#14/28.2254383/84.8113847)
- 5. [Barpak, Nepal](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#15/28.2017/84.7454)
+[Kalinchok, Kuri Village, Central Region, Nepal](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#17/27.74714/86.03230)
+![kuri_z17](https://cloud.githubusercontent.com/assets/4587826/7359571/b010b5d0-ed0d-11e4-8471-80364a0a042e.png)
 
+[Bahrabise, Central Region, Nepal](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#14/27.7970573/85.9195447)
+![bhaktapur_z16](https://cloud.githubusercontent.com/assets/4587826/7359618/58ae6142-ed0e-11e4-80ee-5d4390086f04.png)
 
-### Best data coverage
+[Charikot, Bhimeshwor Municipality, Nepal](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#16/27.6667/86.0529)
+![charikot_z16](https://cloud.githubusercontent.com/assets/4587826/7359627/82e96402-ed0e-11e4-995c-df9f98b2ce55.png)
 
-Below are a few locations with the most custom data coverage in Nepal.
+[Laprak, Nepal](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#15/28.2119/84.8069)
+![laprak_z15](https://cloud.githubusercontent.com/assets/4587826/7359646/ac16df4e-ed0e-11e4-8b7e-02dc6219e8b8.png)
 
-- [Kathmandu](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#14/27.6962/85.3258)
-- [Patan](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#15/27.6710/85.3261)
-- [Kirtipur](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#15/27.6703/85.2844)
-
+[Barpak, Nepal](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#16/28.2016/84.7448)
+![barpak_z15](https://cloud.githubusercontent.com/assets/4587826/7359664/f225b76c-ed0e-11e4-9711-9932747b51f3.png)
 
 ### CartoCSS Styling
 
