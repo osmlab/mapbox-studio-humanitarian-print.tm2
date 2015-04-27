@@ -10,17 +10,11 @@ var handler = new osmium.Handler();
 
 var desired = [
     'amenity=fire_station',
-    'emergency=fire_hydrant',
-    'emergency=water_tank',
-    'emergency=suction_point',
-    'emergency=fire_water_pond',
-    'fire_hydrant:type=pillar',
-    'fire_hydrant:type=underground',
-    'fire_hydrant:type=wall',
-    'fire_hydrant:type=unknown',
-    'fire_hydrant:type=pond',
+    'emergency=*',
+    'fire_hydrant:*',
     'amenity=public_building',
-    'amenity=drinking_water'
+    'amenity=drinking_water',
+    'office=*'
 ];
 
 handler.on('node', filter);
@@ -31,7 +25,9 @@ function filter(item) {
     var keys = Object.keys(tags);
     keys.forEach(function(key) {
         var candidate = key + '=' + tags[key];
-        if (desired.indexOf(candidate) > -1) {
+
+        if ((desired.indexOf(candidate) > -1) ||
+            (desired.indexOf(key + '=*') > -1)) {
             var type = (item.coordinates !== undefined) ? 'node' : 'way';
             var properties = tags;
             properties[type + '_id'] = item.id;
@@ -41,6 +37,7 @@ function filter(item) {
                 'geometry': item.geojson()
             }));
         }
+
     });
 }
 
