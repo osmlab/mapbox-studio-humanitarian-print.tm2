@@ -1,447 +1,345 @@
-/* LABELS.MSS CONTENTS:
- * - Place names
- * - POI labels
- * - Area labels
- * - Waterway labels
- * - Road labels
- * - Oneway arrows
- * - Admin labels
- * - Housenumbers
- */
+// =====================================================================
+// LABELS
 
-/* Font sets are defined in palette.mss */
+// General notes:
+// - `text-halo-rasterizer: fast;` gives a noticeable performance
+//    boost to render times and is recommended for *all* halos.
 
-/* Mapnik does not yet support character-spacing adjustments for 
-   labels placed along a line. We can fake this using the replace()
-   function in the text-name parameter by replacing each character
-   with itself followed by one or more spaces. */
+// ---------------------------------------------------------------------
+// Languages
 
-/* ================================================================== */
-/* LABLE NAME SETUP
-/* ================================================================== */
-@name: '[name]';
+// There are 5 language options in the MapBox Streets vector tiles:
+// - Local/default: '[name]'
+// - English: '[name_en]'
+// - French: '[name_fr]'
+// - Spanish: '[name_es]'
+// - German: '[name_de]'
+@name: '[name]';  
+@name_en: '[name_en]';  
 
-/* ================================================================== */
-/* PLACE NAMES
-/* ================================================================== */
+// ---------------------------------------------------------------------
+// Fonts
 
-/* ---- Countries --------------------------------------------------- */
+// All fontsets should have a good fallback that covers as many glyphs
+// as possible. 'Arial Unicode MS Regular' and 'Arial Unicode MS Bold' 
+//are recommended as final fallbacks if you have them available. 
+//They support all the characters used in the MapBox Streets vector tiles.
+@fallback: 'Open Sans Regular';
+@sans: 'Open Sans Regular', 'Arial Unicode MS Regular';
+@sans_md: 'Open Sans Semibold', 'Arial Unicode MS Regular';
+@sans_bd: 'Open Sans Bold','Arial Unicode MS Bold';
+@sans_it: 'Open Sans Italic', 'Arial Unicode MS Regular';
 
-#country_label[zoom>=3][zoom<=7] {
-  text-name:@name;
-  text-face-name:@sans_bold;
-  text-placement:point;
-  text-fill:@country_text;
-  text-halo-fill: @country_halo;
-  text-halo-radius: 1;
-  [scalerank=0] { text-size: 14; }
-  [scalerank=1] { text-size: 13; }
-  [scalerank=2] { text-size: 12; }
-  [scalerank=3] { text-size: 11; }
-  [zoom=3] {
-    text-size: 9;
-    text-wrap-width: 40;
-  }
-  [zoom>=4] {
-    text-size: 11;
-    text-wrap-width: 50;
-  }
-  [zoom>=5] {
-    text-halo-radius: 2;
-    text-wrap-width: 50;
-    text-line-spacing: 1;
-  }
-  [zoom=6] {
-    text-size: 13;
-    text-character-spacing: 1;
-    text-wrap-width: 80;
-    text-line-spacing: 2;
-  }
-  [zoom=7] {
-    text-size: 14;
-    text-character-spacing: 2;
-  }
-}
 
-/* ---- States ------------------------------------------------------ */
-#state_label[zoom>=5][zoom<=10] {
-  text-name:@name;
-  text-face-name:@sans_bold_italic;
-  text-placement:point;
-  text-fill:@state_text;
-  text-halo-fill: @state_halo;
-  text-halo-radius: 1;
-  [area>=10000] { text-size: 14; }
-  [area>=500000] { text-size: 16; }
-  [area>=1000000] { text-size: 18; }
-  [zoom=5] {
-    text-size:9 + @text_adjust;
-    text-wrap-width: 35;
-  }
-  [zoom=6] {
-    text-size:10 + @text_adjust;
-    text-wrap-width: 40;
-  }
-  [zoom=7] {
-    text-size:11 + @text_adjust;
-    text-wrap-width: 50;
-  }
-  [zoom>8] {
-    text-halo-radius: 2;
-  }
-  [zoom=8] {
-    text-size:11 + @text_adjust;
-    text-wrap-width: 50;
-    text-line-spacing: 1;
-  }
-  [zoom=9] {
-    text-size:12 + @text_adjust;
-    text-character-spacing: 1;
-    text-wrap-width: 80;
-    text-line-spacing: 2;
-  }
-  [zoom=10] {
-    text-size:14 + @text_adjust;
-    text-character-spacing: 2;
-  }
-}
+// ---------------------------------------------------------------------
+// Countries
 
-/* ---- Cities and Towns ----------------------------------------------- */
-
-#place_label[is_capital='country'][zoom>=4][zoom<=10],
-#place_label[type='city'][zoom>=7][zoom<=10],
-#place_label[type='town'][zoom>=9][zoom<=10] {
-  shield-file: url('icons/place/town.png');
-  [type='city'] {
-    shield-file: url('icons/place/city.png');
-  }
-  [capital=2] {
-    shield-file: url('icons/place/country_capital.png');
-  }
-  shield-name:@name;
-  shield-size: 9;
-  shield-face-name: @sans;
-  shield-halo-radius: 1;
-  shield-wrap-width: 50;
-  shield-fill: @town_text;
-  shield-halo-fill: @town_halo;
-  shield-placement-type: simple;
-  shield-placements: 'NE,SW,NW,SE,E,W';
-  shield-text-dy: 3;
-  shield-text-dx: 3;
-  shield-unlock-image: true;
-  shield-min-distance: 10;
-  [type='city'] {
-    shield-fill: @city_text;
-    shield-halo-fill: @city_halo;
-    shield-size: 10;
-  }
-  [is_capital='country'] {
-    shield-face-name: @sans_bold;
-    shield-fill: @capital_text;
-    shield-halo-fill: @capital_halo;
-    shield-size: 11;
-    shield-line-spacing: -2;
-    shield-text-dx: 4;
-  }
-  [zoom>=10] {
-    shield-halo-radius: 2;
-    shield-size: 10;
-    [type='city'] { shield-size: 11;}
-    [is_capital='country'] { shield-size: 11;}
-  }
-}
-
-#place_label[type='city'][zoom>=11][zoom<=15],
-#place_label[type='town'][zoom>=11][zoom<=17] {
-  text-name:'[name]';
-  text-size: 11;
-  text-face-name: @sans;
+// The country labels in MapBox Streets vector tiles are placed by hand,
+// optimizing the arrangement to fit as many as possible in densely-
+// labeled areas.
+#country_label[zoom>=2] {
+  text-name: @name;
+  text-face-name: @sans_bd;
+  text-transform: uppercase;
+  text-wrap-width: 100;
+  text-wrap-before: true;
+  text-fill: #334;
+  text-halo-fill: fadeout(#fff,80%);
   text-halo-radius: 2;
-  text-wrap-width: 50;
-  text-fill: @town_text;
-  text-halo-fill: @town_halo;
-  [type='city'] {
-    text-fill: @city_text;
-    text-halo-fill: @city_halo;
+  text-halo-rasterizer: fast;
+  text-line-spacing: -4;
+  text-character-spacing: 0.5;
+  text-size: 8;
+  [zoom>=3][scalerank=1],
+  [zoom>=4][scalerank=2],
+  [zoom>=5][scalerank=3],
+  [zoom>=6][scalerank>3] {
     text-size: 12;
   }
-  [is_capital='country'] {
-    text-face-name: @sans_bold;
-    text-fill: @capital_text;
-    text-halo-fill: @capital_halo;
-    text-line-spacing: -2;
-    text-transform: uppercase;
-  }
-  [zoom>=12]{
-    text-size:12;
-    [type='city'],
-    [is_capital='country'] { text-size: 13;}
-  }
-  [zoom>=13]{
-    text-transform: uppercase;
-    text-character-spacing: 1;
-    [type='city'],
-    [is_capital='country'] { text-size: 14;}
-  }
-  [zoom>=14]{
-    text-size:13;
-    text-character-spacing: 2;
-    [type='city'],
-    [is_capital='country'] { text-size: 15;}
-  }
-  [zoom>=15]{
-    text-size:14;
-    text-character-spacing: 3;
-    [type='city'],
-    [is_capital='country'] { text-size: 16;}
-  }
-  [zoom>=16]{
-    text-size:15;
-    text-line-spacing: 5;
-  }
-  [zoom>=17]{
-    text-size:16;
-    text-line-spacing: 6;
+  [zoom>=4][scalerank=1],
+  [zoom>=5][scalerank=2],
+  [zoom>=6][scalerank=3],
+  [zoom>=7][scalerank>3] {
+    text-size: 15;
   }
 }
 
-
-
-/* ---- Other small places ------------------------------------------ */
-
-#place_label[type='village'][zoom>=11][zoom<=20],
-#place_label[type='suburb'][zoom>=13][zoom<=20],
-#place_label[type='hamlet'][zoom>=13][zoom<=20],
-#place_label[type='neighbourhood'][zoom>=13][zoom<=20] {
-  text-name:@name;
-  text-face-name:@sans;
-  text-placement:point;
-  text-fill:@other_text;
-  text-size:10;
-  text-halo-fill:@other_halo;
-  text-halo-radius:1;
-  text-wrap-width: 30;
-  text-min-distance: 100;
-  text-avoid-edges: true;
-  text-label-position-tolerance: 10;
-  [zoom>=13] {
-    text-min-distance: 50;
-  }
-  [zoom>=14] {
-    text-size:11;
-    text-character-spacing: 1;
-    text-wrap-width: 40;
-    text-line-spacing: 1;
-  }
-  [zoom>=15] {
-    text-halo-radius: 2;
-    text-transform: uppercase;
-    text-character-spacing: 1;
-    text-wrap-width: 60; 
-    text-line-spacing: 1;
-    text-min-distance: 30;
-  }
-  [zoom>=16] {
-    text-size:12;
-    text-character-spacing: 2;
-    text-wrap-width: 120;
-    text-line-spacing: 2;
-    text-min-distance: 10;
-  } 
-  [zoom>=17] {
-    text-size:13; 
-    text-character-spacing: 3;
-    text-wrap-width: 160;
-    text-line-spacing: 4;
-  }
-  [zoom>=18] {
-    text-size:14;
-    text-character-spacing: 4;
-    text-line-spacing: 6;
-  }
-}
-
-#place_label[type='locality'][zoom>=15] {
-  text-name:@name;
-  text-face-name:@sans;
-  text-placement:point;
-  text-fill:@locality_text;
-  text-size:9;
-  text-halo-fill:@locality_halo;
-  text-halo-radius:1;
-  text-wrap-width: 30;
-  [zoom>=16] {
-    text-size:10;
-    text-wrap-width: 60;
-    text-line-spacing: 1;
-  }
-  [zoom>=17] {
-    text-size:11;
-    text-wrap-width: 120;
-    text-line-spacing: 2;
-  }
-  [zoom>=18] {
-    text-size:12;
-    text-character-spacing: 1;
-    text-line-spacing: 4;
-  }
+#country_label_line {
+  // Lines that connect offset labels to small
+  // island & coastal countries at small scales.
+  line-color: #fff;
+  line-dasharray: 3,1;
 }
 
 
-// =====================================================================
-// POI LABELS
-// =====================================================================
+// ---------------------------------------------------------------------
+// Marine
 
-// moved to poi.mss
-
-// =====================================================================
-// AREA LABELS
-// =====================================================================
-
-// Unsupported in MapBox Streets
-
-/* ================================================================== */
-/* WATERWAY LABELS
-/* ================================================================== */
-
-#waterway_label[type='river'][zoom>=13],
-#waterway_label[type='canal'][zoom>=15],
-#waterway_label[type='stream'][zoom>=17] {
+#marine_label {
   text-name: @name;
-  text-face-name: @sans_italic;
-  text-fill: darken(@water,20%);
-  text-halo-fill: @other_halo;
-  text-halo-radius: 1;
-  text-placement: line;
-  text-min-distance: 400;
+  text-face-name: @sans_it;
+  text-wrap-width: 60;
+  text-wrap-before: true;
+  text-fill: darken(@water, 10);
+  text-halo-fill: fadeout(#fff, 75%);
+  text-halo-radius: 1.5;
   text-size: 10;
-  text-dy: 7;
-  [type='river'][zoom=14],
-  [type='canal'][zoom=16],
-  [type='stream'][zoom=18] {
-    text-name: "@name.replace('([\S\ ])','$1 ')";
+  text-character-spacing: 1;
+  // Some marine labels should be drawn along a line 
+  // rather than on a point (the default)
+  [placement='line'] {
+    text-placement: line;
+    text-avoid-edges: true;
   }
-  [type='river'][zoom=15],
-  [type='canal'][zoom=17] {
-    text-size: 11;
-    text-name: "@name.replace('([\S\ ])','$1 ')";
+  
+  // Oceans
+  [labelrank=1] { 
+    text-size: 18;
+    text-wrap-width: 120;
+    text-character-spacing:	4;
+    text-line-spacing:	8;
   }
-  [type='river'][zoom>=16],
-  [type='canal'][zoom>=18] {
-    text-size: 14;
-    text-name: "@name.replace('([\S\ ])','$1 ')";
-    text-spacing: 300;
+  [labelrank=2] { text-size: 14; }
+  [labelrank=3] { text-size: 11; }
+  [zoom>=5] {
+    text-size: 12;
+    [labelrank=1] { text-size: 22; }
+    [labelrank=2] { text-size: 16; }
+    [labelrank=3] {
+      text-size: 14;
+      text-character-spacing: 2;
+     }
+   }
+}
+
+// ---------------------------------------------------------------------
+// Cities, towns, villages, etc
+
+// City labels with dots for low zoom levels.
+// The separate attachment keeps the size of the XML down.
+#place_label::citydots[type='city'][zoom>=4][zoom<=7][localrank<=3] {
+  // explicitly defining all the `ldir` values wer'e going
+  // to use shaves a bit off the final project.xml size
+  [ldir='N'],[ldir='S'],[ldir='E'],[ldir='W'],
+  [ldir='NE'],[ldir='SE'],[ldir='SW'],[ldir='NW'] {
+    shield-file: url("shield/dot.svg");
+    shield-transform:scale(0.3,0.3);
+    shield-unlock-image: true;
+    shield-name: @name;
+    shield-size: 12;
+    shield-face-name: @sans;
+    shield-placement: point;
+    shield-fill: #333;
+    shield-halo-fill: fadeout(#fff, 50%);
+    shield-halo-radius: 2;
+    shield-halo-rasterizer: fast;
+    shield-margin:30;
+    [zoom=7] { shield-size: 14; }
+
+    [ldir='E'] { shield-text-dx: 5; }
+    [ldir='W'] { shield-text-dx: -5; }
+    [ldir='N'] { shield-text-dy: -5; }
+    [ldir='S'] { shield-text-dy: 5; }
+    [ldir='NE'] { shield-text-dx: 4; shield-text-dy: -4; }
+    [ldir='SE'] { shield-text-dx: 4; shield-text-dy: 4; }
+    [ldir='SW'] { shield-text-dx: -4; shield-text-dy: 4; }
+    [ldir='NW'] { shield-text-dx: -4; shield-text-dy: -4; }
   }
 }
 
-/* ================================================================== */
-/* ROAD LABELS
-/* ================================================================== */
-
-// highway shield
-#road_label[class='motorway'][zoom>=8][reflen>=1][reflen<=6],
-#road_label[class='main'][zoom>=8][reflen>=1][reflen<=6] {
-  shield-name: "[ref]";
-  shield-file: url("icons/shield/motorway_sm_[reflen].png");
-  shield-size: 9;
-  shield-face-name: @sans_bold;
-  shield-fill: #fff;
-  shield-spacing: 300;
-  shield-avoid-edges: true;
-  shield-min-padding: 10;
-  shield-min-distance: 40;
-  [zoom>=12] { shield-min-distance: 80; }
-  [zoom>=15] {
-    shield-spacing: 400;
-    shield-size: 11;
-    shield-file: url("icons/shield/motorway_sm_[reflen].png");
-  }
-}
-
-#road_label['mapnik::geometry_type'=2] {
-  [class='motorway'],
-  [class='main'][zoom>=12],
-  [class='street'][zoom>=15],
-  [class='street_limited'][zoom>=16],
-  [class='service'][zoom>=17] {
-  text-name:@name;
-  text-face-name:@sans_bold;
-  text-placement:line;
-  text-fill:@road_text;
-  text-halo-fill:@road_halo;
-  text-halo-radius:1;
-  text-min-distance:60;
-  text-size:10;
-  text-avoid-edges: true;
-  [zoom=11] { text-min-distance:70; }
-  [zoom=12] { text-min-distance:80; }
-  [zoom=13] { text-min-distance:100; }
-  }
-}
-
-/* ================================================================== */
-/* ONE-WAY ARROWS
-/* ================================================================== */
-
-#road[oneway=1] {
-  marker-placement:line;
-  marker-max-error: 0.5;
-  marker-spacing: 200;
-  marker-file: url('icons/oneway.svg');
-  [oneway=-1] { marker-file: url('icons/oneway-reverse.svg'); }
-  [zoom=16] { marker-transform: "scale(0.5)"; }
-  [zoom=17] { marker-transform: "scale(0.75)"; }
-}
-
-/* ================================================================== */
-/* HOUSENUMBERS
-/* ================================================================== */
-
-
-#housenum_label[zoom>=17]{
-  text-name: [house_num];
-  text-placement: interior;
+#place_label[zoom>=8][localrank<=3] {
+  text-name: @name;
   text-face-name: @sans;
-  text-fill: @road_text;
-  text-size: 7;
-  [zoom=17][mod5='no'] {
-    text-name: "";
+  text-wrap-width: 80;
+  text-wrap-before: true;
+  text-fill: #333;
+  text-halo-fill: fadeout(#fff, 50%);
+  text-halo-radius: 2;
+  text-halo-rasterizer: fast;
+  text-size: 10;
+  text-line-spacing:-2;
+  text-margin:25;
+
+  // Cities
+  [type='city'][zoom>=8][zoom<=15] {
+  	text-face-name: @sans_md;
+    text-size: 16;
+    text-line-spacing:-7;
+
+    [zoom>=10] { 
+      text-size: 18;
+      text-wrap-width: 140;
+    }
+    [zoom>=12] { 
+      text-size: 24;
+      text-wrap-width: 180;
+    }
+    // Hide at largest scales:
+    [zoom>=16] { text-name: "''"; }
   }
-  [zoom >= 18] {
-    text-size: 9;
+  
+  // Towns
+  [type='town'] {
+    text-size: 12;    
+    text-halo-fill: fadeout(#fff, 50%);
+    text-halo-radius: 2.5;
+    [zoom>=12] { text-size: 12; }
+    [zoom>=14] { text-size: 16; }
+    [zoom>=16] { text-size: 22; }
+    // Hide at largest scales:
+    [zoom>=18] { text-name: "''"; }
+  }
+  
+  // Villages and suburbs
+  [type='village'] {
+    text-size: 12;    
+    text-halo-fill: fadeout(@land, 50%);
+    text-halo-radius: 2;
+    [zoom>=12] { text-size: 10; }
+    [zoom>=14] { text-size: 14; }
+    [zoom>=16] { text-size: 18; }
+  }
+  [type='hamlet'],
+  [type='suburb'],
+  [type='neighbourhood'] {
+    text-fill: #633;
+    text-face-name:	@sans_it;
+    text-transform: none;
+    text-margin:80;
+    text-halo-radius: 2.5;
+    text-character-spacing: 0.5;
+    text-size: 14;
+    [zoom>=14] { text-size: 15; }
+    [zoom>=15] { text-size: 16; text-character-spacing: 1; }
+    [zoom>=16] { text-size: 18; text-character-spacing: 2; }
+    [zoom>=18] { text-size: 24; text-character-spacing: 3; }
   }
 }
 
-/* ================================================================== */
-/* NATURAL
-/* ================================================================== */
 
-/*#natural_point_label[type='bay'][zoom>=10] {
-  text-name: '[name]';
-  text-face-name: @sans_italic;
-  text-fill: darken(@water,30%);
-  text-halo-fill: lighten(@water,10%);
-  text-halo-radius: 1;
-  text-size: 11;
+
+
+// ---------------------------------------------------------------------
+// Roads
+@us-shield-name: "[ref].replace(';.*', '').replace('^[^\d]*', '')";
+#road_label::us_shield[reflen>0][reflen<=6]{
+  // Default shields
+  shield-file: url("shield/motorway_[reflen].svg");
+  shield-name: [ref];
+  shield-face-name: 'PT Sans Bold', 'Open Sans Regular';
+  shield-size: 11;
+  shield-fill: #444;
+  shield-min-padding: 50;
+  shield-min-distance:120;
+  shield-character-spacing:-0.5;
+  [reflen>2]{shield-character-spacing:-0.75}
+  [zoom>=11] { shield-min-distance: 100; }
+  [zoom>=16] {   shield-min-padding: 50;}
+
+  // 1 & 2 digit US state highways
+  [ref =~ '^(AL|AK|AS|AZ|AR|CA|CO|CT|DE|DC|FM|FL|GA|GU|HI|ID|IL|IN|IA|KS|KY|LA|ME|MH|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|MT|OH|OK|OR|PW|PA|PR|RI|SC|SD|TN|TX|UT|VT|VI|VA|WA|WV|WI|WY|SR)\ ?\d[\dA-Z]?(;.*|$)'] {
+    shield-file: url(shield/us_state_2.svg);
+    shield-name: @us-shield-name;
+    shield-transform:scale(0.85,0.85);
+    shield-character-spacing:-0.75;
+  }
+  // 3 digit US state highways
+  [ref =~ '^(AL|AK|AS|AZ|AR|CA|CO|CT|DE|DC|FM|FL|GA|GU|HI|ID|IL|IN|IA|KS|KY|LA|ME|MH|MD|MA|MI|MN|MS|MO|MT|NE|NV|NH|NJ|NM|NY|NC|ND|MT|OH|OK|OR|PW|PA|PR|RI|SC|SD|TN|TX|UT|VT|VI|VA|WA|WV|WI|WY|SR)\ ?\d\d[\dA-Z](;.*|$)'] {
+    shield-file: url(shield/us_state_3.svg);
+    shield-name: @us-shield-name;
+    shield-character-spacing:-1;
+    shield-transform:scale(0.85,0.85);
+  }
+  // 1 & 2 digit US highways
+  [ref =~ '^US\ ?\d[\dA-Z]?(;.*|$)'] {
+    shield-file: url(shield/us_highway_2.svg);
+    shield-name: @us-shield-name;      
+    shield-character-spacing:-0.5;
+    shield-transform:scale(1.4, 1.4);
+    [zoom>=14]{
+          shield-character-spacing:-0.5;
+    }
+
+  }
+  // 3 digit US highways
+  [ref =~ '^US\ ?\d\d[\dA-Z](;.*|$)'] {
+    shield-file: url(shield/us_highway_3.svg);
+    shield-name: @us-shield-name;
+    shield-character-spacing:-1.5;
+    shield-transform:scale(1.4,1.4);
+
+  }
+  // 1 & 2 digit US Interstates
+  [ref =~ '^I\ ?\d[\dA-Z]?(;.*|$)'] {
+    shield-file: url(shield/us_interstate_2.svg);
+    shield-name: @us-shield-name;
+    shield-transform:scale(0.8,0.8);
+    shield-character-spacing:-0.75;
+    shield-fill: #fff;
+    shield-dy: 0;
+    [zoom>=10]{shield-dy: -1;}
+    [zoom>=19]{shield-dy: 0;}
+  }
+  // 3 digit US Interstates
+  [ref =~ '^I\ ?\d\d[\dA-Z](;.*|$)'] {
+    shield-file: url(shield/us_interstate_3.svg);
+    shield-name: @us-shield-name;
+    shield-transform:scale(0.85,0.85);
+    shield-fill: #fff;
+    shield-character-spacing:-0.75;
+    shield-dy: -1;
+    [zoom>=13][zoom<=15]{shield-dy: -0.5;}
+  }
 }
 
-#natural_point_label[type='volcano'][zoom>=13],
-#natural_point_label[type='peak'][zoom>=13] {
-  shield-file: url('icons/natural/peak-6.png');
-  shield-name: '[name]';
-  shield-face-name: @sans_lt_italic;
-  shield-fill: @peak;
-  shield-size: 10;
-  shield-min-distance: 50;
-  shield-text-dy: 6;
-  shield-text-dx: 6;
-  shield-halo-fill: @other_halo;
-  shield-halo-radius: 1;
-  shield-placement-type: simple;
-  shield-placements: 'S,N,E,W';
-  shield-unlock-image: true;
-  [ele!=null] {
-    shield-name: '[name] + " (" + [ele] + ")"';
+
+#road_label {
+  text-name: @name;
+  text-placement: line;  // text follows line path
+  text-face-name: @sans;
+  text-fill: #333;
+  text-halo-fill: fadeout(#fff, 75%);
+  text-halo-radius: 2;
+  text-halo-rasterizer: fast;
+  text-size: 12;
+  text-margin:20;
+  text-avoid-edges: true;  // prevents clipped labels at tile edges
+  [type='motorway'] {text-face-name: @sans_bd;  }
+
+  [zoom>=15] { text-size: 13; }
+
+}
+
+
+// ---------------------------------------------------------------------
+// Water
+
+#water_label {
+  [zoom<=13],  // automatic area filtering @ low zooms
+  [zoom>=14][area>500000],
+  [zoom>=16][area>10000],
+  [zoom>=17] {
+    text-name: @name;
+    text-face-name: @sans_it;
+    text-fill: darken(@water, 15);
+    text-size: 10;
+    text-wrap-width: 70;
+    text-line-spacing: -1;
+    text-wrap-before: true;
+    text-halo-fill: fadeout(#fff, 30%);
+    text-halo-radius: 1.5;
+    text-transform: uppercase;
   }
-}*/
+}
+
+
+// ---------------------------------------------------------------------
+// House numbers
+
+#housenum_label[zoom>=19] {
+  text-name: [house_num];
+  text-face-name: @sans_it;
+  text-fill: #999;
+  [zoom=19] { text-size: 10; }
+  [zoom>=20] { text-size: 12; }
+}

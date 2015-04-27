@@ -11,17 +11,17 @@ bounds:
   - 180
   - 85.0511
 center: 
-  - -72.1119
-  - 19.6751
-  - 15
-description: Mapbox print map for Kathmandu Living Labs
-format: "png8:m=h:c=128"
+  - 85.2182
+  - 27.7796
+  - 9
+description: ''
+format: "png8:m=h"
 interactivity_layer: ''
 layers: 
   - landcover
   - landuse
-  - contour.line
   - hillshade
+  - contour.line
   - waterway
   - water
   - aeroway
@@ -32,26 +32,25 @@ layers:
   - road
   - bridge
   - admin
-  - country_label_line
   - country_label
   - marine_label
   - state_label
   - place_label
   - water_label
+  - nepal
   - poi_label
   - road_label
   - waterway_label
   - housenum_label
   - contour.label
-maxzoom: 21
+maxzoom: 22
 minzoom: 0
-name: HDM
-source: "mapbox:///mapbox.mapbox-terrain-v1,mapbox.mapbox-streets-v5"
+name: KLL quake
+source: "mapbox:///mapbox.mapbox-streets-v5,kll.ewomvx6r"
 styles: 
-  - base.mss
-  - palette.mss
-  - roads.mss
+  - style.mss
+  - road.mss
   - labels.mss
-  - poi.mss
-  - power.mss
+  - pois.mss
+  - buildings.mss
 template: ''

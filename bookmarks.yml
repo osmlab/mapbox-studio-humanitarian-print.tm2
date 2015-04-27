@@ -1,8 +1,88 @@
-- place_name: 37000, Adrar, Algeria
-  zoom: 2
+- place_name: Kalinchok, Kuri Village, Central Region, Nepal
+  zoom: 15
   center: 
-    - 24.206889622398023
-    - -2.8125
+    - 27.7508477
+    - 86.0346651
   tags: 
     - userbookmark
   index: 0
+- place_name: Bahrabise, Central Region, Nepal
+  zoom: 14
+  center: 
+    - 27.7970573
+    - 85.9195447
+  tags: 
+    - userbookmark
+  index: 1
+- place_name: Charikot, Bhimeshwor Municipality, Nepal
+  zoom: 15
+  center: 
+    - 27.6659311
+    - 86.0479475
+  tags: 
+    - userbookmark
+  index: 2
+- place_name: Larpak, Nepal
+  zoom: 13
+  center: 
+    - 28.227423780644287
+    - 84.81256484985352
+  tags: 
+    - userbookmark
+  index: 3
+- place_name: Barpak, Nepal
+  zoom: 15
+  center: 
+    - 28.204167033854958
+    - 84.74626064300537
+  tags: 
+    - userbookmark
+  index: 4
+- place_name: Narayani, Nepal
+  zoom: 13
+  center: 
+    - 27.699184076042748
+    - 84.46014404296875
+  tags: 
+    - userbookmark
+  index: 5
+- place_name: Kathmandu, Bagmati, Nepal
+  zoom: 13
+  center: 
+    - 27.683072050366672
+    - 85.3311538696289
+  tags: 
+    - userbookmark
+  index: 6
+- place_name: Kathmandu, Bagmati, Nepal
+  zoom: 15
+  center: 
+    - 27.674901128890223
+    - 85.27832508087158
+  tags: 
+    - userbookmark
+  index: 7
+- place_name: Kathmandu, Bagmati, Nepal
+  zoom: 15
+  center: 
+    - 27.675471213012955
+    - 85.32342910766602
+  tags: 
+    - userbookmark
+  index: 8
+- place_name: Bhaktapur, Bagmati, Nepal
+  zoom: 17
+  center: 
+    - 27.670748926462288
+    - 85.42529940605164
+  tags: 
+    - userbookmark
+  index: 9
+- place_name: Janakpur, Nepal
+  zoom: 16
+  center: 
+    - 27.665931413790368
+    - 86.04796886444092
+  tags: 
+    - userbookmark
+  index: 10
