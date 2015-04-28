@@ -24,22 +24,22 @@
     // filter custom data to show amenity specific icons
     [amenity='drinking_water'] {
       marker-fill: @drinkingwater;
-      marker-height:12;
-      //marker-file: url('icon/beer-12.svg');
+      marker-height:8;
       marker-file: url('icon/water-12.svg');
-      marker-allow-overlap: true;
+      //marker-allow-overlap: true;
+      [zoom>=17] { marker-height:12; }
      }
     [amenity='fire_station'] {
       marker-fill: @fire;
       marker-height:12;
       marker-file: url('icon/fire-station-12.svg');
-      marker-allow-overlap: true;
+      //marker-allow-overlap: true;
       }
     [amenity='hospital'] {
       marker-fill: @hospital;
       marker-height: 12;
       marker-file: url('icon/hospital-12.svg');
-      marker-allow-overlap: true;
+      //marker-allow-overlap: true;
       }
     }
 

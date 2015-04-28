@@ -8,12 +8,12 @@
 // also in the #water_label and #waterway_label layers inside a color
 // manipulation function to get a darker shade of the same hue.
 @land: #f8f4f0;
-@water: desaturate(darken(#a0c8f0,15),10);
+@water: desaturate(lighten(#a0c8f0,5),10);
 @water_dark: #185869;  // for the inline/shadow
 @crop: #eeeed4;
-@grass: darken(#e7ebd1,10);
-@scrub: darken(#e0e8cd,10);
-@wood: darken(#d4e2c6,15);
+@grass: fadeout(#e7ebd1,10);
+@scrub: fadeout(#e0e8cd,10);
+@wood: fadeout(#d4e2c6,15);
 @snow: #f4f8ff;
 @rock: #ddd;
 @sand: mix(#ffd,@land,33%);
@@ -155,7 +155,7 @@ Map {
     polygon-clip: false;
     image-filters-inflate: true;
     [class='shadow'] {
-      polygon-fill: #000;
+      polygon-fill: #444;
       polygon-opacity: 0.1;
       [zoom>=15][zoom<=16] { polygon-opacity: 0.075; }
       [zoom>=17][zoom<=18] { polygon-opacity: 0.05; }
@@ -196,3 +196,33 @@ Map {
   }
 }
 
+// ---------------------------------------------------------------------
+// Contour lines and labels
+
+#contour.line::line [zoom>=13] {
+  line-color: #909090;
+  line-width: 0.15;
+  line-opacity: 0.35;
+  [zoom>=15] { line-width: 0.5; }
+  [zoom>=16] { line-width: 1; }
+  [index=10] { 
+    line-width: 0.3; 
+    [zoom>=15] { line-width: 0.4; }
+  }
+}
+
+#contour.label::label {
+  [index=10][zoom>=13] {
+    text-name: "[ele]+'m'";
+    text-face-name: @sans;
+    text-placement: line;
+    text-size: 8;
+    text-character-spacing: 1;
+    text-fill: #555;
+    text-halo-fill: fadeout(lighten(@land,10), 90);
+    text-halo-radius: 1.5;
+    text-halo-rasterizer: fast;
+    text-avoid-edges: true;
+    text-max-char-angle-delta: 30;
+  }
+}

@@ -3,6 +3,13 @@
 @main:              #fea;
 @street:            #fff;
 @street_limited:    #f3f3f3;
+@case1:   darken(mix(@motorway, #800, 75),10); 
+@case-prime:  darken(@land * 0.8,18);
+@case-sec:    darken(@land * 0.8,10);
+@case-main:   darken(#aaa,10);
+@case-street:  darken(@land * 0.8,10); // main places views
+@case-serve:  darken(@land * 0.9,25);
+@case-path:   darken(#aaa,5);
 
 // ---------------------------------------------------------------------
 
@@ -23,7 +30,7 @@
   ::case[zoom>=3]['mapnik::geometry_type'=2] {
     [class='motorway'] {
       line-join:round;
-      line-color: darken(mix(@motorway, #800, 75),10);
+      line-color: @case1;
       #road { line-cap: round; }
       #tunnel { line-dasharray:3,2; }
       [zoom>=5]  { line-width:0.5; }
@@ -40,7 +47,7 @@
     // interchanges/onramps
     [class='motorway_link'][zoom>=13] {
       line-join:round;
-      line-color: darken(mix(@motorway, #800, 75),10);
+      line-color: @case1;
       #road { line-cap: round; }
       #tunnel { line-dasharray:3,2; }
       [zoom>=13] { line-width:1; }
@@ -52,7 +59,7 @@
     // trunk roads (subset of "main" class in mapbox streets)
     [type='trunk'] {
       line-join:round;
-      line-color: darken(mix(@main, #800, 75),10);
+      line-color: @case1;
       #road { line-cap: round; }
       #tunnel { line-dasharray:3,2; }
       [zoom>=2] { line-width:2; }
@@ -65,7 +72,7 @@
     // Primary roads (subset of "main" class in mapbox streets)
     [type='primary']{
       line-join:round;
-      line-color: darken(@land * 0.8,18);
+      line-color: @case-prime;
       #road { line-cap: round; }
       #tunnel { line-dasharray:3,2; }
       [zoom>=6] { line-width:0.2; }
@@ -82,7 +89,7 @@
     [type='secondary'],
     [type='tertiary']{
       line-join:round;
-      line-color: darken(@land * 0.8,10);
+      line-color: @case-sec;
       line-width:1;
       #road { line-cap: round; }
       #tunnel { line-dasharray:3,2; }
@@ -95,7 +102,7 @@
     //residual main roads that somehow don't have a type
     [class='main'] [type=''] {
       line-join:round;
-      line-color: darken(#aaa,10);
+      line-color: @case-main;
       #road { line-cap: round; }
       #tunnel { line-dasharray:3,2; }
       [zoom>=2] { line-width:0.5; }
@@ -106,7 +113,7 @@
       line-join:round;
       #road { line-cap: round; }
       #tunnel { line-dasharray:3,2; }
-      line-color: darken(@land * 0.8,3);
+      line-color: @case-street;
       [zoom>=10] { line-width:0.5; }
       [zoom>=14] { line-width:3; }
       [zoom>=15] { line-width:4; }
@@ -117,13 +124,13 @@
       line-join:round;
       #road { line-cap: round; }
       #tunnel { line-dasharray:3,2; }
-      line-color: @land * 0.9;
-      [zoom>=15] { line-width:1; }
+      line-color: @case-serve;
+      [zoom>=15] { line-width:2.5; }
       [zoom>=16] { line-width:4; }
     }
     //walking paths (just a dotted line, so this won't have an inline)
     [class='path'][zoom>=14] {
-      line-color: #aaa;
+      line-color: @case-path;
       line-dasharray: 2,1;
       line-width:0.5;
       [zoom>=15] { line-width:1; }
@@ -203,9 +210,10 @@
       [zoom>=15] { line-width:2.5;  }
       [zoom>=16] { line-width:4; }
     }
-    [class='service'][zoom>=16], {
+    [class='service'][zoom>=15], {
       line-join:round;
       #road, #bridge { line-cap: round; }
+      [zoom>=15] { line-width:1; line-color:#fff; }
       [zoom>=16] { line-width:2; line-color:#fff; }
     }
     // railroad crosshatches

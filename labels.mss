@@ -301,12 +301,13 @@
   text-halo-fill: fadeout(#fff, 75%);
   text-halo-radius: 2;
   text-halo-rasterizer: fast;
-  text-size: 12;
+  text-size: 11;
   text-margin:20;
   text-avoid-edges: true;  // prevents clipped labels at tile edges
+  text-transform: uppercase;
   [type='motorway'] {text-face-name: @sans_bd;  }
 
-  [zoom>=15] { text-size: 13; }
+  [zoom>=16] { text-size: 13; }
 
 }
 
@@ -318,7 +319,7 @@
   [zoom<=13],  // automatic area filtering @ low zooms
   [zoom>=14][area>500000],
   [zoom>=16][area>10000],
-  [zoom>=17] {
+  [zoom>=18] {
     text-name: @name;
     text-face-name: @sans_it;
     text-fill: darken(@water, 15);

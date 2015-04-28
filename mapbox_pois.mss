@@ -16,21 +16,21 @@
     // can use that in our url expression.
     // Not all POIs have a Maki icon assigned, so we limit this section
     // to those that do. See also <https://www.mapbox.com/maki/>
-    marker-fill:#666;
+    marker-fill: #555;//#666;
     marker-file:url('icons/maki/[maki]-12.svg');
   }
   ::label {
     text-name: @name;
-    text-face-name: @sans;
-    text-size: 12;
-    text-fill: #666;
+    text-face-name: @sans_md;
+    text-size: 11;
+    text-fill: #444;//#666;
     text-halo-fill: fadeout(#fff, 50%);
     text-halo-radius: 1;
     text-halo-rasterizer: fast;
     text-wrap-width: 70;
     text-line-spacing:	-1;
     //text-transform: uppercase;
-    //text-character-spacing:	0.25;
+    text-character-spacing:	-0.25;
     // POI labels with an icon need to be offset:
     [maki!=null] { text-dy: 8; }
   }

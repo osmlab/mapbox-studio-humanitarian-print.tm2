@@ -1,18 +1,21 @@
 // ---------------------------------------------------------------------
 // Buildings data
 
+@building-fill: #323232;//#767676;
+@roof: lighten(#c7c5c5,3);//lighten(#eee,3);
+@wall: darken(#aeadad,15);//darken(#ccc,15);
 
 #nepal {
   
   // Sub-layer "Attachment" for buildings added with custom data
   
   ::building[zoom>=15][building!='yes'] {
-    polygon-fill: #aaa;
+    polygon-fill: @building-fill;
     opacity: 0.25;
     [zoom>=16] {
-      ::wall { polygon-fill: #ccc; }
+      ::wall { polygon-fill: @wall;  }
       ::roof {
-        polygon-fill: #eee;
+        polygon-fill: @roof;
         polygon-geometry-transform:translate(-1,-1);
         polygon-clip:false;  
         line-width: 0.25;
@@ -55,15 +58,15 @@
 #building [zoom<=17]{
   // At zoom level 13, only large buildings are included in the
   // vector tiles. At zoom level 14+, all buildings are included.
-  polygon-fill: #aaa;
+  polygon-fill: @building-fill;
   opacity: 0.25;
 }
 // Seperate attachments are used to draw buildings with depth
 // to make them more prominent at high zoom levels
 #building [zoom>=16]{
-::wall { polygon-fill:#ccc; }
+::wall { polygon-fill: @wall; }
 ::roof {
-  polygon-fill: #eee;
+  polygon-fill: @roof;
   polygon-geometry-transform:translate(-1,-1);
   polygon-clip:false;  
   line-width: 0.25;
