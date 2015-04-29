@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mapbox-upload": "^3.1.0",
     "osmium": "^0.3.0"
   }
 }
