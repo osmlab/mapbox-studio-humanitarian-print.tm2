@@ -17,9 +17,10 @@ This project consists of a print style for Mapbox Studio and [way to download ad
 
 The fastest way to print these maps is through [Fieldpapers](http://fieldpapers.org/). Select the map from the style drop down like in the screenshot below.
 
-![](http://dl.dropboxusercontent.com/s/315rp9ith6mdp3w/Screen%20Shot%202015-04-29%20at%203.00.51%20PM.png)
+![fieldpapers3](https://cloud.githubusercontent.com/assets/4587826/7399821/81404124-ee86-11e4-952b-621d9213302c.png)
 
-You can also set up this map style in [Mapbox Studio](https://www.mapbox.com/mapbox-studio/#darwin) and print from there. This gives you more resolution options and the ability to adjust the style.
+
+You can also set up this map style in [Mapbox Studio](https://www.mapbox.com/mapbox-studio/) and print from there. This gives you more resolution options and the ability to adjust the style.
 
 ## Web map
 
