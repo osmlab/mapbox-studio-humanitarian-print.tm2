@@ -2,6 +2,9 @@
 
 Extracts point of interest data not avilable in standard Mapbox Streets vector tiles. The point of interest data is extracted from OpenStreetMap and converted into GeoJSON, ready to be further processed into vector tiles with Tippecanoe. The vector tiles can then be used in Mapbox Studio together with the regular OpenStreetMap based Mapbox Streets vector tiles.
 
+Below are instructions to generate the map data yourself. If you are looking for a map id, ready to use in your [Mapbox Studio](https://www.mapbox.com/mapbox-studio) project, use this: **kll.ewomvx6r**
+
+
 ## Usage
 
 `index.js` is a script which extracts OSM objects with certain tags from the Nepal pbf provided by geofabrik.
