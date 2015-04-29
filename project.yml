@@ -4,7 +4,7 @@ _prefs:
 _properties: 
   bridge: 
     "group-by": layer
-attribution: "<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox &copy; OpenStreetMap</a> <a class='mapbox-improve-map' href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a>"
+attribution: "<a href='https://www.mapbox.com/about/maps/' target='_blank'>&copy; Mapbox</a> and <a href='https://wiki.openstreetmap.org/wiki/2015_Nepal_earthquake' target='_blank'>&copy; OpenStreetMap</a> contributors. <a class='mapbox-improve-map' href='http://kathmandulivinglabs.github.io/quake-maps/' target='_blank'>More about these maps.</a>"
 bounds: 
   - -180
   - -85.0511
