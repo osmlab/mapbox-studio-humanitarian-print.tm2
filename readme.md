@@ -13,6 +13,10 @@ The map style highlights certain humanitarian points-of-interest.
 Style mapID: **kll.ptthjjor**
 Source mapID: **kll.ewomvx6r**
 
+## Background
+
+This style was created as part of the [2015 Nepal Earthquake response](http://wiki.openstreetmap.org/wiki/2015_Nepal_earthquake). You can find maps ready to print based on this style on [Kathmandu Living Labs' Quake Maps page](to http://kathmandulivinglabs.github.io/quake-maps/).
+
 ## Studio files
 
 This stylesheet can be used in Mapbox Studio, [following these instructions](https://www.mapbox.com/help/github-style/)
