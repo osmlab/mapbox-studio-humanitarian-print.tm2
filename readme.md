@@ -1,13 +1,21 @@
-mapbox-studio-humanitarian-print.tm2
-=======
+# Print maps for humanitarian response
 
-This project is made up of a map style for Mapbox Studio, highlighting certain humanitarian points-of-interest, and a script for updating the underlying vector tiles to keep the map up to date.
+[Mapbox Studio](https://www.mapbox.com/mapbox-studio) styles and additional data for print maps, intended to be used in humanitarian response scenarios. Easy to repurpose for similar use cases.
+
+This project consists of a print style for Mapbox Studio and [way to download additional point of interest data](https://github.com/osmlab/mapbox-studio-humanitarian-print.tm2/tree/master/data) usually not available in Mapbox Streets, the standard OpenStreetMap based source in Mapbox Studio.
+
+The map style highlights certain humanitarian points-of-interest.
+
+## Rendered map
+
+[Preview map](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#8/28.580/84.034) 
 
 Style mapID: **kll.ptthjjor**
 Source mapID: **kll.ewomvx6r**
 
-[Preview map](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#8/28.580/84.034) 
+## Background
 
+This style was created as part of the [2015 Nepal Earthquake response](http://wiki.openstreetmap.org/wiki/2015_Nepal_earthquake). You can find maps ready to print based on this style on [Kathmandu Living Labs' Quake Maps page](to http://kathmandulivinglabs.github.io/quake-maps/).
 
 ## Studio files
 
