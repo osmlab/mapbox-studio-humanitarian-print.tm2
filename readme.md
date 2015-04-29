@@ -1,10 +1,17 @@
 # Print maps for humanitarian response
 
+Printable maps highlighting points of interest relevant to disaster response:
+
+- `amenity=fire_station`
+- `emergency=*`
+- `fire_hydrant:`
+- `amenity=public_building`
+- `amenity=drinking_water`
+- `office=*`
+
 [Mapbox Studio](https://www.mapbox.com/mapbox-studio) styles and additional data for print maps, intended to be used in humanitarian response scenarios. Easy to repurpose for similar use cases.
 
 This project consists of a print style for Mapbox Studio and [way to download additional point of interest data](https://github.com/osmlab/mapbox-studio-humanitarian-print.tm2/tree/master/data) usually not available in Mapbox Streets, the standard OpenStreetMap based source in Mapbox Studio.
-
-The map style highlights certain humanitarian points-of-interest.
 
 ## Print these maps
 
