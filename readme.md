@@ -6,12 +6,19 @@ This project consists of a print style for Mapbox Studio and [way to download ad
 
 The map style highlights certain humanitarian points-of-interest.
 
-## Rendered map
+## Print these maps
 
-[Preview map](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#8/28.580/84.034) 
+The fastest way to print these maps is through [Fieldpapers](http://fieldpapers.org/). Select the map from the style drop down like in the screenshot below.
 
-Style mapID: **kll.ptthjjor**
-Source mapID: **kll.ewomvx6r**
+![](http://dl.dropboxusercontent.com/s/315rp9ith6mdp3w/Screen%20Shot%202015-04-29%20at%203.00.51%20PM.png)
+
+You can also set up this map style in [Mapbox Studio](https://www.mapbox.com/mapbox-studio/#darwin) and print from there. This gives you more resolution options and the ability to adjust the style.
+
+## Web map
+
+[Here is a slippy web map of the style](https://api.tiles.mapbox.com/v4/kll.ptthjjor/page.html?access_token=pk.eyJ1Ijoia2xsIiwiYSI6IktVRUtfQnMifQ.GJAHJPvusgK_f0NsSXS8QA#8/28.580/84.034) 
+
+You can use map with [Mapbox.js](https://www.mapbox.com/mapbox.js/) by using this map id: **kll.ptthjjor**.
 
 ## Background
 
