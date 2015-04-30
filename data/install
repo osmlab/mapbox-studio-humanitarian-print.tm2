@@ -1,0 +1,9 @@
+cd /mnt
+apt-get update
+apt-get install -y nodejs npm libprotobuf-dev protobuf-compiler libsqlite3-dev g++
+npm install
+git clone https://github.com/mapbox/tippecanoe.git
+cd tippecanoe
+make
+make install
+cd ../
