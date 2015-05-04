@@ -1,8 +1,9 @@
 out.mbtiles: output.geojson
-	tippecanoe -o out.mbtiles -n "Nepal - Updated $(date)" output.geojson
+	rm -rf out.mbtiles
+	tippecanoe -o out.mbtiles -l "Nepal - Updated `date`" -n nepal output.geojson
 
 output.geojson: pbf
-	nodejs index latest.osm.pbf > output.geojson
+	node index.js latest.osm.pbf > output.geojson
 
 pbf:
 	rm -rf latest.osm.pbf
