@@ -1,6 +1,7 @@
 var upload = require('mapbox-upload');
+var arg = process.argv;
 
-// node upload <file> <account> <accesstoken> <mapid>
+if (!argv[5]) return console.log('usage: node upload.js <file> <account> <accesstoken> <mapid>');
 
 progress = upload({
     file: process.argv[2],
