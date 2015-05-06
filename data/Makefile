@@ -1,4 +1,6 @@
 upload: out.mbtiles
+	/bin/echo "--------------------------------------------------"
+	/bin/echo $(date)
 	node upload.js out.mbtiles kll <properly scoped accesstoken here> kll.ewomvx6r
 
 out.mbtiles: output.geojson

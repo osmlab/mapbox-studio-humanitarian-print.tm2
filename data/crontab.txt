@@ -1,1 +1,1 @@
-0 * * * * /bin/echo make -C /mnt/mapbox-studio-humanitarian-print.tm2/data/
+0 * * * * /bin/echo make -C /mnt/mapbox-studio-humanitarian-print.tm2/data/ >> /mnt/nepal-tiles-log.txt
