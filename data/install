@@ -1,0 +1,13 @@
+# for installing on ubuntu, meant for auto-updates but node-osmium doesn't work correctly
+# https://github.com/osmcode/node-osmium/issues/41
+
+cd /mnt
+apt-get update
+apt-get install -y nodejs npm libprotobuf-dev protobuf-compiler libsqlite3-dev g++ make
+ln -s /usr/bin/nodejs /usr/bin/node
+git clone https://github.com/mapbox/tippecanoe.git
+cd tippecanoe
+make
+make install
+cd ../
+npm install
