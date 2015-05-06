@@ -1,3 +1,6 @@
+upload: out.mbtiles
+	node upload.js out.mbtiles kll <properly scoped accesstoken here> kll.ewomvx6r
+
 out.mbtiles: output.geojson
 	rm -rf out.mbtiles
 	tippecanoe -o out.mbtiles -n "Nepal - Updated `date`" -l nepal output.geojson
